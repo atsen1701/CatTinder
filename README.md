@@ -34,7 +34,7 @@ To run the project locally:
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/cattinder.git
+git clone https://github.com/atifafifi/catTinder.git
 cd cattinder
 
 # Install dependencies
