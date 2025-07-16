@@ -35,7 +35,7 @@ To run the project locally:
 ```bash
 # Clone the repository
 git clone https://github.com/atifafifi/catTinder.git
-cd cattinder
+cd catTinder
 
 # Install dependencies
 npm install
