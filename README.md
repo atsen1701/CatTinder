@@ -22,7 +22,6 @@ This project was developed in response to a technical task by Netizen Experience
 
 - [React](https://reactjs.org/)
 - [Vite](https://vitejs.dev/)
-- [Tailwind CSS](https://tailwindcss.com/)
 - [react-tinder-card](https://www.npmjs.com/package/react-tinder-card)
 - [Cataas API](https://cataas.com/)
 
