@@ -2,7 +2,6 @@
 import '../css/MainTinder.css'
 import { useEffect, useState, useRef } from 'react'
 import { useSwipeable } from 'react-swipeable'
-import { FaCat, FaHeart } from 'react-icons/fa';
 
 // Array of the catNames
 const catNames = [
@@ -25,7 +24,17 @@ const catNames = [
     'Kunyit',
     'Kelabu',
     'Tomey',
-    'Bunga'
+    'Bunga',
+    'Chombi',
+    'Tiger',
+    'Puteh',
+    'Mimi',
+    'Gebu',
+    'Oyeng',
+    'Belang',
+    'Uteh',
+    'Snowy',
+    'Meera'
 ];
 //Array of the catLocations 
 const catLocations = [
@@ -38,7 +47,17 @@ const catLocations = [
     'Shah Alam, Selangor',
     'Ipoh, Perak',
     'Johor Bahru, Johor',
-    'Kota Bharu, Kelantan'
+    'Kota Bharu, Kelantan',
+    'Alor Setar, Kedah',
+    'Butterworth, Penang',
+    'Seremban, Negeri Sembilan',
+    'Kuantan, Pahang',
+    'Taiping, Perak',
+    'Melaka',
+    'Kangar, Perlis',
+    'Muar, Johor',
+    'Putrajaya',
+    'Kuala Terengganu, Terengganu'
 ];
 //Array of the catBios
 const catBios = [
@@ -51,7 +70,17 @@ const catBios = [
     'Suka sangat kalau orang gosok perut dia.',
     'Asyik tengok burung luar tingkap je.',
     'Semua benda nak explore, sibuk betul.',
-    'Melekat kat riba orang, macam kucing manja VIP.'
+    'Melekat kat riba orang, macam kucing manja VIP.',
+    'Lepas makan terus tidur, hidup senang.',
+    'Suka menyelit dalam plastik shopping.',
+    'Bila dengar bunyi tin, terus datang.',
+    'Pakai bell, tapi tetap senyap macam ninja.',
+    'Suka tengok TV, especially bila ada nature show.',
+    'Bulu dia lembut macam kapas.',
+    'Pernah curi ikan atas meja, tak mengaku.',
+    'Bila mandi, suara macam kena dera.',
+    'Pantang nampak lipas, terus serang.',
+    'Ada stail tidur macam manusia.'
 
 ];
 
@@ -133,7 +162,7 @@ function MainTinder() {
         setLikes([]);
         setDislikes([]);
         setCats([]);
-        setSwipeCount(0); 
+        setSwipeCount(0);
         setLoading(true);
         fetchCats();
     };
@@ -147,17 +176,9 @@ function MainTinder() {
 
     return (
         <div className="tinder-bg">
-            <div className="tinder-title-row">
-                <h2 className="tinder-title">CatTinder</h2>
-                <span className="cat-kiss-icon" style={{ display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
-                    <FaCat style={{ transform: 'scaleX(1)', fontSize: '2rem', verticalAlign: 'middle' }} />
-                    <FaHeart color="#ef4444" style={{ fontSize: '2.1rem', verticalAlign: 'middle' }} />
-                    <FaCat style={{ transform: 'scaleX(-1)', fontSize: '2rem', verticalAlign: 'middle' }} />
-                </span>
-            </div>
             {(swipeCount >= 10) ? (
                 <div className="tinder-summary">
-                    <h3>You have liked {likes.length} cat{likes.length !== 1 ? 's' : ''}!</h3>
+                    <h3>🐾 Whoa! You’ve meow-swiped {likes.length} cat{likes.length !== 1 ? 's' : ''}! Somebody’s a feline fanatic~</h3>
                     <div className="tinder-liked-cats">
                         {likes.length === 0 ? (
                             <p>No cats liked this round. Try again!</p>
@@ -171,6 +192,24 @@ function MainTinder() {
                                     </div>
                                 </div>
                             ))
+                        )}
+                    </div>
+                    <div className="tinder-dislike-cats-section">
+                        <h4>😾 These felines didn’t make the cut... cold, bro.</h4>
+                        {dislikes.length === 0 ? (
+                            <p>You didn't dislike any cats!</p>
+                        ) : (
+                            <div className="tinder-liked-cats">
+                                {dislikes.map((cat, idx) => (
+                                    <div className="tinder-liked-card" key={cat.img + cat.name + idx}>
+                                        <img src={cat.img} alt={cat.name} className="tinder-cat-img" />
+                                        <div className="tinder-card-info">
+                                            <h4>{cat.name}</h4>
+                                            <p className="tinder-location">{cat.location}</p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
                         )}
                     </div>
                     <button className="tinder-next-btn" onClick={handleRestart}>Restart</button>
@@ -207,6 +246,7 @@ function MainTinder() {
                     {loading && <div className="tinder-loading">Loading cats...</div>}
                 </div>
             )}
+
         </div>
     );
 }
