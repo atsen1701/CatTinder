@@ -2,7 +2,6 @@
 
 CatTinder is a single-page web application built with React and JavaScript (powered by Vite) that lets users discover their preferred types of cats through swipe gestures — just like Tinder, but for felines! 🐱💕
 
-This project was developed in response to a technical task by Netizen Experience.
 
 ---
 
@@ -28,6 +27,21 @@ This project was developed in response to a technical task by Netizen Experience
 
 ---
 
+
+## 🙋‍♂️ Questions or Support
+
+If you have any questions, suggestions, or need support regarding this project, feel free to reach out or open an issue.
+
+📬 **Preferred Contact Methods**  
+I'm not very active on other platforms, so please use one of the following:
+
+- 📧 Email: [atifafifi16@gmail.com](mailto:atifafifi16@gmail.com)  
+- 📷 Instagram: [___a_t_i_f__](https://www.instagram.com/___a_t_i_f__?igsh=bXJ5cTNqZWV3dng3)
+
+I'll do my best to get back to you as soon as possible!
+
+---
+
 ## 📦 Installation & Setup
 
 To run the project locally:
@@ -42,3 +56,7 @@ npm install
 
 # Start the dev server
 npm run dev
+
+
+
+
